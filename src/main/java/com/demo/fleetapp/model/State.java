@@ -19,10 +19,7 @@ public class State {
     private String code;
 
     @ManyToOne
-    @JoinColumn(name = "countryid", insertable = false, updatable = false)
     private Country country;
-
-    private long CountryId;
 
     private String details;
 
