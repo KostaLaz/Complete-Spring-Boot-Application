@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -23,4 +24,7 @@ public class Country {
     private String nationality;
     private String continent;
     private String description;
+    
+    @OneToMany
+    private List<State> states;
 }
