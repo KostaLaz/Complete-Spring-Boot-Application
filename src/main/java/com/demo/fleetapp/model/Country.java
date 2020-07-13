@@ -25,6 +25,6 @@ public class Country {
     private String continent;
     private String description;
     
-    @OneToMany
+    @OneToMany(mappedBy = "country")
     private List<State> states;
 }
