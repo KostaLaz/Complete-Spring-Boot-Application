@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class VehicleStatusController {
-    @GetMapping("/user")
+    @GetMapping("/vehicle_status")
     public String getUser(){
-        return "user";
+        return "vehicle_status";
     }
 }
