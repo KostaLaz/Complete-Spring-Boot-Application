@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class CountryController {
-    @GetMapping("/index")
-    public String goHome(){
+    @GetMapping("/country")
+    public String getCountries(){
         return "country";
     }
 }
