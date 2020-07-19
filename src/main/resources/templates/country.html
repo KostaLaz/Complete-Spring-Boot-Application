@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="utf-8">
@@ -415,17 +415,11 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-              </tr>
-              <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
+              <tr th:each="country:${countries}" >
+                  <td th:text="${country.id}"></td>
+                  <td th:text="${country.description}"></td>
+                  <td th:text="${country.capital}"></td>
+                  <td th:text="${country.code}"></td>
               </tr>
               </tbody>
           </table>
