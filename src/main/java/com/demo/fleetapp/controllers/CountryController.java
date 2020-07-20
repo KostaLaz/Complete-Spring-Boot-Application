@@ -5,6 +5,7 @@ import com.demo.fleetapp.service.CountryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -23,6 +24,12 @@ public class CountryController {
         List<Country> countryList = countryService.getAllCountries();
         model.addAttribute("countries", countryList);
         return countryList;
+    }
+
+    @PostMapping("/countries/addnew")
+    public String addNew(Country country){
+        countryService.addNewCountry(country);
+        return "redirect:/countries";
     }
 
 }

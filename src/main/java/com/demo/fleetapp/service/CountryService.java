@@ -15,4 +15,7 @@ public class CountryService {
         return countryRepository.findAll();
     }
 
+    public void addNewCountry(Country country){
+        countryRepository.save(country);
+    }
 }
