@@ -7,9 +7,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CountryServiceImpl {
+public class CountryServiceImpl implements ClientService {
 
     private CountryRepository countryRepository;
+
+    public CountryServiceImpl(CountryRepository countryRepository) {
+        this.countryRepository = countryRepository;
+    }
 
     public List<Country> getAllCountries(){
         return countryRepository.findAll();
