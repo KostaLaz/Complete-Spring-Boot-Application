@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CountryService {
+public class CountryServiceImpl {
 
     private CountryRepository countryRepository;
 

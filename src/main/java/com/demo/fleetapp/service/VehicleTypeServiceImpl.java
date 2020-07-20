@@ -3,5 +3,5 @@ package com.demo.fleetapp.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ContactService {
+public class VehicleTypeServiceImpl {
 }

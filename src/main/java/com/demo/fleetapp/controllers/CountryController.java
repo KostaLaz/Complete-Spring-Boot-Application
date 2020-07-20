@@ -1,7 +1,7 @@
 package com.demo.fleetapp.controllers;
 
 import com.demo.fleetapp.model.Country;
-import com.demo.fleetapp.service.CountryService;
+import com.demo.fleetapp.service.CountryServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +12,7 @@ import java.util.List;
 @Controller
 public class CountryController {
 
-    private CountryService countryService;
+    private CountryServiceImpl countryServiceImpl;
 
     @GetMapping("/countries")
     public String getCountries(){
@@ -21,14 +21,14 @@ public class CountryController {
 
     @GetMapping("/allcountries")
         public List<Country> getAllCountries(Model model){
-        List<Country> countryList = countryService.getAllCountries();
+        List<Country> countryList = countryServiceImpl.getAllCountries();
         model.addAttribute("countries", countryList);
         return countryList;
     }
 
     @PostMapping("/countries/addnew")
     public String addNew(Country country){
-        countryService.addNewCountry(country);
+        countryServiceImpl.addNewCountry(country);
         return "redirect:/countries";
     }
 
