@@ -14,8 +14,5 @@ public class CountryService {
     public List<Country> getAllCountries(){
         return countryRepository.findAll();
     }
-
-    public void insertCountry(Country country){
-        countryRepository.
-    }
+    
 }
