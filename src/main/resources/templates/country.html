@@ -431,8 +431,9 @@
                     <td th:text="${country.code}"></td>
                     <td>
                         <div class="btn-group">
-                            <a th:href="@{/countries/countrybyid/(id=${country.id})}" class="btn btn-primary" id="update-button">Edit</a>
-                            <a th:href="@{/countries/delete/(id=${country.id})}" class="btn btn-danger" id="delete-button">Delete</a>
+                            <a th:href="@{/countries/countrybyid/(id=${country.id})}" class="btn btn-primary" id="update-button"><i class="icon_pencil-edit"></i></a>
+                            <a class="btn btn-success" id="details-button"><i class="icon_document_alt"></i></a>
+                            <a th:href="@{/countries/delete/(id=${country.id})}" class="btn btn-danger" id="delete-button"><i class="icon_close_alt2"></i></a>
                         </div>
                     </td>
                 </tr>
