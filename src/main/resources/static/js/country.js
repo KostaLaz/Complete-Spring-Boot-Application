@@ -13,5 +13,11 @@ $('document').ready(function(){
         });
         $('#editModal').modal();
     });
+
+    $('table #delete-button').on('click', function (event){
+        event.preventDefault();
+
+        $('#deleteModal').modal();
+    });
 });
 

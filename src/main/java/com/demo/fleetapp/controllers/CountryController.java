@@ -43,4 +43,9 @@ public class CountryController {
         return "redirect:/countries";
     }
 
+    @DeleteMapping("countries/delete")
+    public void deleteCountry(Long id){
+        countryServiceImpl.deleteCountry(id);
+    }
+
 }
