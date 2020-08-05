@@ -25,6 +25,12 @@ public class CountryController {
         return "country";
     }
 
+    @RequestMapping(value ="/countries/update", method = {RequestMethod.PUT, RequestMethod.GET})
+    public String update(Country country){
+        countryServiceImpl.addNewCountry(country);
+        return "redirect:/countries";
+    }
+
     @RequestMapping("/countries/countrybyid/")
     @ResponseBody
     public Optional<Country> findById(Long id){
