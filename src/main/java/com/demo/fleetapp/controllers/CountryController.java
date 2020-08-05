@@ -4,10 +4,7 @@ import com.demo.fleetapp.model.Country;
 import com.demo.fleetapp.service.CountryServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +25,7 @@ public class CountryController {
         return "country";
     }
 
-    @RequestMapping("/countries/countrybyid")
+    @RequestMapping("/countries/countrybyid/")
     @ResponseBody
     public Optional<Country> findById(Long id){
         return countryServiceImpl.findById(id);
