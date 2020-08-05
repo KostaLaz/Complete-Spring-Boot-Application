@@ -12,7 +12,7 @@ import java.util.Optional;
 @Controller
 public class CountryController {
 
-    private CountryServiceImpl countryService;
+    private final CountryServiceImpl countryService;
 
     public CountryController(CountryServiceImpl countryService) {
         this.countryService = countryService;

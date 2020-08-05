@@ -10,11 +10,11 @@ import java.util.Optional;
 @Service
 public class StateServiceImpl implements StateService {
     
-    private StateRepository stateRepository;
+    private final StateRepository stateRepository;
 
-//    public StateServiceImpl(StateRepository stateRepository) {
-//        this.stateRepository = stateRepository;
-//    }
+    public StateServiceImpl(StateRepository stateRepository) {
+        this.stateRepository = stateRepository;
+    }
 
     @Override
     public List<State> getAllStates(){

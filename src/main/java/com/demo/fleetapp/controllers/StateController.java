@@ -12,7 +12,7 @@ import java.util.Optional;
 @Controller
 public class StateController {
 
-    private StateServiceImpl stateService;
+    private final StateServiceImpl stateService;
 
     public StateController(StateServiceImpl stateService) {
         this.stateService = stateService;
