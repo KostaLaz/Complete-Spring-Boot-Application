@@ -1,7 +1,7 @@
 package com.demo.fleetapp.controllers;
 
 import com.demo.fleetapp.model.Country;
-import com.demo.fleetapp.service.CountryServiceImpl;
+import com.demo.fleetapp.service.CountryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,40 +12,37 @@ import java.util.Optional;
 @Controller
 public class CountryController {
 
-    private CountryServiceImpl countryServiceImpl;
+    private CountryService countryService;
 
-    public CountryController(CountryServiceImpl countryServiceImpl) {
-        this.countryServiceImpl = countryServiceImpl;
-    }
 
     @GetMapping("/countries")
     public String getAllCountries(Model model){
-        List<Country> countryList = countryServiceImpl.getAllCountries();
+        List<Country> countryList = countryService.getAllCountries();
         model.addAttribute("countries", countryList);
         return "country";
     }
 
     @RequestMapping(value ="/countries/update", method = {RequestMethod.PUT, RequestMethod.GET})
     public String update(Country country){
-        countryServiceImpl.addNewCountry(country);
+        countryService.addNewCountry(country);
         return "redirect:/countries";
     }
 
     @RequestMapping("/countries/countrybyid/")
     @ResponseBody
     public Optional<Country> findById(Long id){
-        return countryServiceImpl.findById(id);
+        return countryService.findById(id);
     }
 
     @PostMapping("/countries/addnew")
     public String addNew(Country country){
-        countryServiceImpl.addNewCountry(country);
+        countryService.addNewCountry(country);
         return "redirect:/countries";
     }
 
     @RequestMapping(value = "/countries/delete", method = {RequestMethod.DELETE, RequestMethod.GET})
     public String deleteCountry(Long id){
-        countryServiceImpl.deleteCountry(id);
+        countryService.deleteCountry(id);
         return "redirect:/countries";
     }
 
