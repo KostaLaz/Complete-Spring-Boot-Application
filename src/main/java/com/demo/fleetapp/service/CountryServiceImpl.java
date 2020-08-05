@@ -5,6 +5,7 @@ import com.demo.fleetapp.repository.CountryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CountryServiceImpl implements CountryService {
@@ -26,6 +27,11 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public void deleteCountry(Long id) {
         countryRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Country> findById(Long id) {
+        return countryRepository.findById(id);
     }
 
 
