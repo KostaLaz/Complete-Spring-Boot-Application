@@ -1,7 +1,7 @@
 package com.demo.fleetapp.controllers;
 
 import com.demo.fleetapp.model.Country;
-import com.demo.fleetapp.service.CountryService;
+import com.demo.fleetapp.service.CountryServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,11 @@ import java.util.Optional;
 @Controller
 public class CountryController {
 
-    private CountryService countryService;
+    private CountryServiceImpl countryService;
+
+    public CountryController(CountryServiceImpl countryService) {
+        this.countryService = countryService;
+    }
 
 
     @GetMapping("/countries")
