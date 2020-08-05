@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CountryServiceImpl implements ClientService {
+public class CountryServiceImpl implements CountryService {
 
     private CountryRepository countryRepository;
 
@@ -22,4 +22,11 @@ public class CountryServiceImpl implements ClientService {
     public void addNewCountry(Country country){
         countryRepository.save(country);
     }
+
+    @Override
+    public void deleteCountry(Long id) {
+        countryRepository.deleteById(id);
+    }
+
+
 }
