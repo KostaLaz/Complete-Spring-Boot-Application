@@ -19,12 +19,7 @@ public class CountryController {
     }
 
     @GetMapping("/countries")
-    public String getCountries(){
-        return "country";
-    }
-
-    @GetMapping("/allcountries")
-        public String getAllCountries(Model model){
+    public String getAllCountries(Model model){
         List<Country> countryList = countryServiceImpl.getAllCountries();
         model.addAttribute("countries", countryList);
         return "country";
