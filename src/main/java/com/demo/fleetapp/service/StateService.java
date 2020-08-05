@@ -7,9 +7,9 @@ import java.util.Optional;
 
 public interface StateService {
 
-    public List<State> getAllstates();
-    public void addNewstate(State state);
-    public void deletestate(Long id);
+    public List<State> getAllStates();
+    public void addNewState(State state);
+    public void deleteState(Long id);
     public Optional<State> findById(Long id);
 
 }

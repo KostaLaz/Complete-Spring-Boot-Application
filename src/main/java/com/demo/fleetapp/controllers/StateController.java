@@ -1,7 +1,6 @@
 package com.demo.fleetapp.controllers;
 
-import com.demo.fleetapp.model.Country;
-import com.demo.fleetapp.service.stateService;
+import com.demo.fleetapp.model.State;
 import com.demo.fleetapp.service.StateService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,34 +19,34 @@ public class StateController {
     private StateService stateService;
     
 
-    @GetMapping("/countries")
-    public String getAllCountries(Model model){
-        List<Country> countryList = stateService.getAllCountries();
-        model.addAttribute("countries", countryList);
-        return "country";
+    @GetMapping("/states")
+    public String getAllstates(Model model){
+        List<State> StateList = stateService.getAllStates();
+        model.addAttribute("states", StateList);
+        return "State";
     }
 
-    @RequestMapping(value ="/countries/update", method = {RequestMethod.PUT, RequestMethod.GET})
-    public String update(Country country){
-        stateService.addNewCountry(country);
-        return "redirect:/countries";
+    @RequestMapping(value ="/states/update", method = {RequestMethod.PUT, RequestMethod.GET})
+    public String update(State State){
+        stateService.addNewState(State);
+        return "redirect:/states";
     }
 
-    @RequestMapping("/countries/countrybyid/")
+    @RequestMapping("/states/statebyid/")
     @ResponseBody
-    public Optional<Country> findById(Long id){
+    public Optional<State> findById(Long id){
         return stateService.findById(id);
     }
 
-    @PostMapping("/countries/addnew")
-    public String addNew(Country country){
-        stateService.addNewCountry(country);
-        return "redirect:/countries";
+    @PostMapping("/states/addnew")
+    public String addNew(State State){
+        stateService.addNewState(State);
+        return "redirect:/states";
     }
 
-    @RequestMapping(value = "/countries/delete", method = {RequestMethod.DELETE, RequestMethod.GET})
-    public String deleteCountry(Long id){
-        stateService.deleteCountry(id);
-        return "redirect:/countries";
+    @RequestMapping(value = "/states/delete", method = {RequestMethod.DELETE, RequestMethod.GET})
+    public String deleteState(Long id){
+        stateService.deleteState(id);
+        return "redirect:/states";
     }
 }
