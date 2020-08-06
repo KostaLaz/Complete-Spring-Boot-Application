@@ -423,18 +423,18 @@
           <table class="table">
               <thead>
               <tr>
-                  <th>id</th>
-                  <th>Name</th>
-                  <th>Capital</th>
-                  <th>Code</th>
-                  <th>Actions</th>
+                  <th><i class="icon_table"></i> id</th>
+                  <th><i class="icon_table"></i>Name</th>
+                  <th><i class="icon_table"></i>Details</th>
+                  <th><i class="icon_table"></i>Code</th>
+                  <th><i class="icon_table"></i>Actions</th>
               </tr>
               </thead>
               <tbody>
               <tr th:each="state:${states}">
-                  <td th:text="${state.id}"></td>
-                  <td th:text="${state.name}"></td>
-                  <td th:text="${state.capital}"></td>
+                  <td th:text="${state.id}">Id</td>
+                  <td th:text="${state.name}">Name</td>
+                  <td th:text="${state.details}">Details</td>
                   <td th:text="${state.code}"></td>
                   <td>
                       <div class="btn-group">
