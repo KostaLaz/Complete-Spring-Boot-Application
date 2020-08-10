@@ -1,10 +1,11 @@
 
 $('document').ready(function(){
-    $('table #update-button').on('click', function(event){
+    $('.table .button-primary').on('click', function(event){
         event.preventDefault();
         let href = $(this).attr('href');
         $.get(href, function(state, status){
             $('#idEdit').val(state.id);
+            $('#addCo').val(state.id);
             $('#descriptionEdit').val(state.name);
             $('#capitalEdit').val(state.capital);
             $('#codeEdit').val(state.code);

@@ -523,6 +523,16 @@
                           <input type="text" class="form-control" id="idEdit" name="Id" readonly>
                       </div>
                       <div class="form-group">
+                          <label for="ddlCountryEdit" class="col-form-label">Country: </label>
+                          <select class="form-control" id="ddlCountryEdit" name="countryid">
+                              <option>-SELECT-</option>
+                              <option th:each="country : ${countries}"
+                                      th:value="${country.id}"
+                                      th:text="${country.description}">
+                              </option>
+                          </select>
+                      </div>
+                      <div class="form-group">
                           <label for="capitalEdit" class="col-form-label">Capital:</label>
                           <input type="text" class="form-control" id="capitalEdit" name="capital">
                       </div>
