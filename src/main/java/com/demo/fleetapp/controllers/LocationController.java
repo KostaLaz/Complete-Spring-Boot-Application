@@ -36,7 +36,7 @@ public class LocationController {
         model.addAttribute("countries", countryList);
 
         List<State> stateList = stateService.getAllStates();
-        model.addAttribute("countries", stateList);
+        model.addAttribute("states", stateList);
 
         return "location";
     }
