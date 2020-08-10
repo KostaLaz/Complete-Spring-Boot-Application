@@ -1,6 +1,8 @@
 package com.demo.fleetapp.controllers;
 
+import com.demo.fleetapp.model.Country;
 import com.demo.fleetapp.model.State;
+import com.demo.fleetapp.service.CountryServiceImpl;
 import com.demo.fleetapp.service.StateServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +15,11 @@ import java.util.Optional;
 public class StateController {
 
     private final StateServiceImpl stateService;
+    private final CountryServiceImpl countryService;
 
-    public StateController(StateServiceImpl stateService) {
+    public StateController(StateServiceImpl stateService, CountryServiceImpl countryService) {
         this.stateService = stateService;
+        this.countryService = countryService;
     }
 
 
@@ -23,6 +27,9 @@ public class StateController {
     public String getAllstates(Model model){
         List<State> StateList = stateService.getAllStates();
         model.addAttribute("states", StateList);
+
+        List<Country> CountryList = countryService.getAllCountries();
+        model.addAttribute("countries", CountryList);
         return "state";
     }
 
