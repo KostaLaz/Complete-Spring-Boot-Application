@@ -1,6 +1,6 @@
 
 $('document').ready(function(){
-    $('.table .button-primary').on('click', function(event){
+    $('.table #update-button').on('click', function(event){
         event.preventDefault();
         let href = $(this).attr('href');
         $.get(href, function(state, status){
